@@ -1,4 +1,4 @@
-*.parquet
-outputs/
 __pycache__/
+outputs/
 .DS_Store
+*.parquet
