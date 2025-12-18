@@ -1,4 +1,6 @@
-__pycache__/
-outputs/
-.DS_Store
 *.parquet
+*.csv
+*.joblib
+outputs/
+__pycache__/
+.DS_Store
