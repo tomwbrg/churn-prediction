@@ -1,0 +1,10 @@
+# Versions épinglées sur l'environnement de référence : deux installations à
+# deux moments différents doivent produire le même modèle.
+pandas==2.2.3
+numpy==2.1.2
+scikit-learn==1.8.0
+lightgbm==4.6.0
+pyarrow==24.0.0
+joblib==1.5.3
+streamlit==1.57.0
+altair==6.1.0
