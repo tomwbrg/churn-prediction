@@ -1,0 +1,15 @@
+.git/
+.github/
+.pytest_cache/
+.ruff_cache/
+__pycache__/
+*.pyc
+.venv/
+notebooks/
+tests/
+outputs/
+scratch*/
+.DS_Store
+# Les données brutes ne rentrent jamais dans l'image (568 Mo / 135 Mo).
+data/train.parquet
+data/test.parquet
