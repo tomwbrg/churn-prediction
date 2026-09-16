@@ -1,7 +1,7 @@
 # Music Streaming Churn Prediction
 
 [![CI](https://github.com/tomwbrg/churn-prediction/actions/workflows/ci.yml/badge.svg)](https://github.com/tomwbrg/churn-prediction/actions/workflows/ci.yml)
-[![Python](https://img.shields.io/badge/python-3.10%20|%203.11%20|%203.12-blue.svg)](https://www.python.org/)
+[![Python](https://img.shields.io/badge/python-3.11%20|%203.12-blue.svg)](https://www.python.org/)
 [![ROC-AUC](https://img.shields.io/badge/ROC--AUC-0.960-success.svg)](#results)
 [![Docker](https://img.shields.io/badge/docker-ready-2496ed.svg)](#run-with-docker)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
@@ -161,7 +161,7 @@ slice of the data, which silently broke every expression built on it.
 | **Environment** | The Docker image pins the base image, the OS packages and every Python dependency. |
 | **Paths** | Overridable via `CHURN_DATA_DIR` / `CHURN_MODEL_DIR`, so the same code runs locally, in CI and in the container. |
 | **Model** | The trained model is committed with the feature order it was trained on, so the app can never feed columns in the wrong order. |
-| **Python versions** | CI runs the suite on 3.10, 3.11 and 3.12. |
+| **Python versions** | CI runs the suite on 3.11 and 3.12 — the floor scikit-learn 1.8 imposes. |
 
 Retraining from scratch, once the full dataset is in `data/`:
 
@@ -183,7 +183,7 @@ PYTHONPATH=src python scripts/train.py --sample
 Every push runs three jobs:
 
 1. **Lint** — `ruff format --check` and `ruff check`.
-2. **Tests** — the full suite on Python 3.10, 3.11 and 3.12, with coverage.
+2. **Tests** — the full suite on Python 3.11 and 3.12, with coverage.
 3. **Docker** — builds the image, starts the container, and polls
    `/_stcore/health` until the app answers. A build that succeeds but produces
    an app that dies on startup fails the pipeline.
