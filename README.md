@@ -3,7 +3,7 @@
 [![CI](https://github.com/tomwbrg/churn-prediction/actions/workflows/ci.yml/badge.svg)](https://github.com/tomwbrg/churn-prediction/actions/workflows/ci.yml)
 [![Python](https://img.shields.io/badge/python-3.11%20|%203.12-blue.svg)](https://www.python.org/)
 [![ROC-AUC](https://img.shields.io/badge/ROC--AUC-0.960-success.svg)](#results)
-[![Docker](https://img.shields.io/badge/docker-ready-2496ed.svg)](#run-with-docker)
+[![Docker Hub](https://img.shields.io/badge/docker%20hub-tomwbrg31%2Fchurn--prediction-2496ed.svg)](https://hub.docker.com/r/tomwbrg31/churn-prediction)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
 Predicting user churn for a music streaming platform from raw behavioural event
@@ -41,7 +41,14 @@ downgrade attempts, error rate, activity decline.
 
 ### Run with Docker
 
-The image carries the trained model and the sample data — nothing to download.
+The published image carries the trained model and the sample data — nothing
+else to download:
+
+```bash
+docker run -p 8501:8501 tomwbrg31/churn-prediction:1.0.0
+```
+
+Or build it yourself:
 
 ```bash
 docker build -t churn-prediction .
@@ -49,6 +56,9 @@ docker run -p 8501:8501 churn-prediction
 ```
 
 Open <http://localhost:8501>.
+
+Image: [`tomwbrg31/churn-prediction`](https://hub.docker.com/r/tomwbrg31/churn-prediction)
+(289 MB compressed, tags `1.0.0` and `latest`).
 
 ### Run locally
 
